@@ -1,4 +1,5 @@
 'use strict';
+export{}
 
 // Define several things as a variable, then print their values
 // Your name as a string

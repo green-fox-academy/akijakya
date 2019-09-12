@@ -1,4 +1,5 @@
 'use strict';
+export{}
 
 // Store your favorite number in a variable (as a number)
 let favoriteNumber: number = 8;
