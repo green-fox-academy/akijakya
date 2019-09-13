@@ -20,34 +20,30 @@ let lineCount: number = 7;
 //first, building up
 
 let stars: string = '*';
-let spaceCount: number = 1;
-//we need to do this as many times as all the lines divided by one and rounding it up
+//we need to do this as many times as the lineCount divided by two and rounding it up
 let buildUp: number = Math.ceil(lineCount/2);
 
-for (let i:number = 0; i < buildUp; i++){
+for (let i:number = 1; i <= buildUp; i++){
   let spaces: string = '';
-  for (let j:number = 0; j < (buildUp-spaceCount); j++){
-      spaces = spaces + ' ';
+  for (let j:number = 0; j < (buildUp-i); j++){
+      spaces += ' ';
   }
-  spaceCount++
-  console.log(spaces + stars + spaces);
-  stars = stars + '**';
+  console.log(spaces + stars);
+  stars += '**';
 }
 
-//now the teardown part
-//we need to do this as many times as all the lines divided by one and rounding it down
+//now to the teardown part
+//we need to do this as many times as the lineCount divided by two and rounding it down
 let tearDown: number = Math.floor(lineCount/2);
-let spaceCount2: number = 1;
-//to use .slice, first we want that many stars as our lineCount number - 2
+//for the usage of .slice, first we want that many stars as the lineCount - 2
 let starCount: number = lineCount - 2;
 
-for (let i:number = 0; i < tearDown; i++){
+for (let i:number = 1; i <= tearDown; i++){
     let spaces: string = '';
-    for (let j:number = 0; j < (spaceCount2); j++){
-        spaces = spaces + ' ';
+    for (let j:number = 0; j < (i); j++){
+        spaces += ' ';
     }
-    spaceCount2++
     stars = stars.slice(0, starCount);
-    console.log(spaces + stars + spaces);
-    starCount = starCount - 2;
+    console.log(spaces + stars);
+    starCount -= 2;
   }
