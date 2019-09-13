@@ -19,9 +19,9 @@ let spaceCount: number = 1;
 for (let i:number = 0; i < lineCount; i++){
   let spaces: string = '';
   for (let j:number = 0; j < (lineCount-spaceCount); j++){
-      spaces = spaces + ' ';
+      spaces += ' ';
   }
   spaceCount++
-  console.log(spaces + stars + spaces);
-  stars = stars + '**';
+  console.log(spaces + stars);
+  stars += '**';
 }
