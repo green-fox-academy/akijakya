@@ -5,7 +5,7 @@
 console.log('With for loop:')
 
 function unique(arr:number []) {
-    var sorted:number [] = arr.sort();
+    var sorted:number [] = arr.sort((a,b)=>a-b);
     for (let i:number = 1; i <= sorted.length; i++){
         if (sorted[i] === sorted[i-1]) {
             sorted.splice(i, 1);
@@ -21,7 +21,7 @@ console.log(unique([1, 11, 34, 11, 52, 61, 1, 34]))
 console.log('With map method:')
 
 function unique2(arr:number []) {
-    var sorted:number [] = arr.sort();
+    var sorted:number [] = arr.sort((a,b)=>a-b);
     sorted.map (function(value, index){
         if (sorted[index] === sorted[index-1]) {
             sorted.splice(index, 1);
