@@ -2,7 +2,7 @@
 // Apple, Avocado, Blueberries, Durian, Lychee
 let A:string [] = ['Apple', 'Avocado', 'Blueberries', 'Durian', 'Lychee'];
 // Create a new list ('List B') with the values of List A
-let B:string [] = A;
+let B:string [] = [...A];
 // Print out whether List A contains Durian or not
 if (A.indexOf('Durian') !== -1){
     console.log('It has Durian!');
