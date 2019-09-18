@@ -15,6 +15,7 @@ const ctx = canvas.getContext('2d');
 let box:number [][] = [[10, 10], [290,  10], [290, 290], [10, 290]];
 let shape:number [][] = [[50, 100], [70, 70], [80, 90], [90, 90], [100, 70], [120, 100], [85, 130], [50, 100]];
 
+//my first solution:
 function connectTheDots (arr) {
     for(let i:number = 0; i < arr.length-1; i++) {
         ctx.beginPath();
@@ -26,6 +27,20 @@ function connectTheDots (arr) {
 
 connectTheDots(box);
 connectTheDots(shape);
+
+//another solution with the same result:
+function connectTheDots2 (arr) {
+    ctx.beginPath();
+    ctx.moveTo(arr[0][0], arr[0][1]);
+    for(let i:number = 1; i < arr.length; i++) {
+        ctx.lineTo(arr[i][0], arr[i][1]);
+        ctx.stroke();
+    }
+    ctx.closePath();
+}
+
+connectTheDots2(box);
+connectTheDots2(shape);
 
 /*
 function drawRect (spx, spy, size, color){
