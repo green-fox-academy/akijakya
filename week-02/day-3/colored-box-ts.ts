@@ -33,18 +33,17 @@ ctx.stroke();
 
 //making it with function
 
-// function drawRect (spx, spy, size, color){
-    
-//     for (let i:number = 0; i < 4; i++){
-//         ctx.beginPath();
-//         ctx.moveTo(spx, spy);
-//         ctx.strokeStyle = color[i];
-//         ctx.lineTo(spx+size, spy);
-//         ctx.stroke();
-//         spx = spx+size;
+function drawRect (spx, spy, size, color){
+    let arrX:number [] = [spx, spx+size, spx+size, spx, spx];
+    let arrY:number [] = [spy, spy, spy+size, spy+size, spy];
+    for (let i:number = 0; i < 4; i++){
+        ctx.beginPath();
+        ctx.moveTo(arrX[i], arrY[i]);
+        ctx.strokeStyle = color[i];
+        ctx.lineTo(arrX[i+1], arrY[i+1]);
+        ctx.stroke();
+    }
+}
 
-//     }
-// }
-
-// let colors:string [] = ['red', 'blue', 'green', 'yellow']
-// drawRect(300, 100, 100, colors);
+let colors:string [] = ['red', 'blue', 'green', 'purple']
+drawRect(300, 100, 200, colors);
