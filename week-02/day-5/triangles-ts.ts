@@ -12,19 +12,18 @@ function triangle (coorX:number, coorY:number, size:number) {
     ctx.stroke();
 }
 
+let coorX:number = 0;
+let coorY:number = canvas.height;
+let leap:number = canvas.width/21;
+let jCounter:number = 21;
+let iCounter:number = leap/2;
 for (let i:number = 0; i < 21; i++) {
-    let coorX:number = 0;
-    let coorY:number = canvas.height;
-    let leap:number = canvas.width/21;
-    let jCounter:number = 21;
-    let iCounter:number = leap/2;
     for (let j:number = 0; j < jCounter; j++) {
         triangle(coorX, coorY, leap);
         coorX += leap;
     }
-    jCounter -= 2;
-    coorX = 0;
+    jCounter -= 1;
     coorX = iCounter;
-    iCounter += leap;
-    coorY -= leap;
+    iCounter += iCounter;
+    coorY -= leap*Math.sqrt(3)/2;
 }
