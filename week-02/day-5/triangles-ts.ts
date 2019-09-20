@@ -24,6 +24,6 @@ for (let i:number = 0; i < 21; i++) {
     }
     jCounter -= 1;
     coorX = iCounter;
-    iCounter += iCounter;
+    iCounter += leap/2;
     coorY -= leap*Math.sqrt(3)/2;
 }
