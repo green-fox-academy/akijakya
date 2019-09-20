@@ -43,18 +43,18 @@ function drawLines(color1: string, color2: string, divider: number) {
 function drawPattern(color1: string, color2: string, num: number) {
     let incrementX: number = 0;
     let incrementY: number = 0; 
-    for (let i: number = 0; i < num / 2; i++) {
-        for (let j: number = 0; j < num / 2; j++) {
+    for (let i: number = 0; i < Math.sqrt(num); i++) {
+        for (let j: number = 0; j < Math.sqrt(num); j++) {
             ctx.translate(incrementX, incrementY);
-            drawLines(color1, color2, num / 2);
-            incrementX += canvas.width / (num / 2);
+            drawLines(color1, color2, Math.sqrt(num));
+            incrementX += canvas.width / Math.sqrt(num);
         }
         incrementX -= canvas.width;
-        incrementY += canvas.height / (num / 2);
+        incrementY += canvas.height / Math.sqrt(num);
     }
 }
 
-drawPattern('purple', 'green', 16);
+drawPattern('purple', 'green', 64);
 
 // ctx.translate(0, 0);
 // drawLines('purple', 'green', 2);
