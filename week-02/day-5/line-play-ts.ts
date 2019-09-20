@@ -4,7 +4,7 @@ const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
 
 function drawLines(color1: string, color2: string, divider: number) {
-    // drawing the top roght corner
+    // drawing the top right corner
     let leap: number = canvas.width / 15 / divider;
     ctx.strokeStyle = color1;
     ctx.beginPath();
