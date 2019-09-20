@@ -1,4 +1,3 @@
-
 'use strict';
 
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
@@ -38,32 +37,22 @@ function drawLines(color1: string, color2: string, divider: number) {
     }
 }
 
-//drawLines('purple', 'green', 2);
+// drawing only one of this:
+// drawLines('purple', 'green', 2);
 
+//drawing a pattern out of this:
 function drawPattern(color1: string, color2: string, num: number) {
     let incrementX: number = 0;
-    let incrementY: number = 0; 
+    let incrementY: number = 0;
     for (let i: number = 0; i < Math.sqrt(num); i++) {
         for (let j: number = 0; j < Math.sqrt(num); j++) {
-            ctx.translate(incrementX, incrementY);
+            ctx.setTransform(1, 0, 0, 1, incrementX, incrementY);
             drawLines(color1, color2, Math.sqrt(num));
             incrementX += canvas.width / Math.sqrt(num);
         }
-        incrementX -= canvas.width;
+        incrementX = 0;
         incrementY += canvas.height / Math.sqrt(num);
     }
 }
 
-drawPattern('purple', 'green', 64);
-
-// ctx.translate(0, 0);
-// drawLines('purple', 'green', 2);
-
-// ctx.translate(200, 0);
-// drawLines('purple', 'green', 2);
-
-// ctx.translate(-200, 200);
-// drawLines('purple', 'green', 2);
-
-// ctx.translate(200, 0);
-// drawLines('purple', 'green', 2);
+drawPattern('purple', 'green', 9);
