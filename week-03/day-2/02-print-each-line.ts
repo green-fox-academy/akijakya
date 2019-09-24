@@ -5,9 +5,17 @@
 
 const fs = require('fs');
 
+let myFile = '';
+
 try {
-    let myFile = fs.readFileSync('my-file.txt', 'utf8');
+    myFile = fs.readFileSync('my-file.txt', 'utf8');
 }
 catch {
     console.log("Unable to read file: my-file.txt");
+}
+
+let lines = myFile.split('\n');
+
+for (let line of lines) {
+    console.log(line);
 }
