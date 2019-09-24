@@ -6,7 +6,13 @@
 const fs = require('fs');
 
 function lineCount (filename) {
-    let file:string = fs.readFileSync(filename, 'utf8');
+    let file:string = '';
+    try {
+        file = fs.readFileSync(filename, 'utf8');
+    }
+    catch {
+        console.log('');
+    }
     let lines:string [] = file.split('\n');
     return lines.length;
 }
