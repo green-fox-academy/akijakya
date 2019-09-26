@@ -36,4 +36,4 @@ export class Animal {
 let lion = new Animal();
 lion.eat(20);
 
-console.log(lion.hungerLevel);
+// console.log(lion.hungerLevel);
