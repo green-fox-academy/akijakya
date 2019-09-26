@@ -6,9 +6,9 @@
     // which decreases inkAmount
 
 export class Sharpie {
-    private _color:string;
-    private _width:number;
-    private _inkAmount:number;
+    _color:string;
+    _width:number;
+    _inkAmount:number;
 
     constructor (color:string, width:number) {
         this._color = color;
@@ -16,7 +16,7 @@ export class Sharpie {
         this._inkAmount = 100;
     }
 
-    public use () {
-        this._inkAmount--;
+    public use (amount:number) {
+        this._inkAmount -= amount;
     }
 }
