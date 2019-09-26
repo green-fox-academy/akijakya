@@ -12,7 +12,7 @@
     // "One Engineer Is Trying to Get IBM to Reckon With Trump" titled by William Turton at "2017.03.28."
         // Daniel Hanley, a cybersecurity engineer at IBM, doesn’t want to be the center of attention. When I asked to take his picture outside one of IBM’s New York City offices, he told me that he wasn’t really into the whole organizer profile thing.
 
-class BlogPost {
+export class BlogPost {
     private _authorName:string;
     private _title:string;
     private _text:string;
@@ -30,6 +30,7 @@ class BlogPost {
     }
 }
 
+/*
 // creating the blogposts
 let blogPost1 = new BlogPost ('John Doe', 'Lorem Ipsum', 'Lorem ipsum dolor sit amet.', '2000.05.04.');
 let blogText2:string = 'A popular long-form, stick-figure-illustrated blog about almost everything.';
@@ -41,3 +42,4 @@ let blogPost3 = new BlogPost ('William Turton', 'One Engineer Is Trying to Get I
 blogPost1.printBlogpost();
 blogPost2.printBlogpost();
 blogPost3.printBlogpost();
+*/
