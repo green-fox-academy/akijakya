@@ -19,7 +19,7 @@ export class Animal {
         this._hunger -= amount;
     }
 
-    public drink (amount) {
+    public drink (amount:number) {
         this._thirst -= amount;
     }
 
