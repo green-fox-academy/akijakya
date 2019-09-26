@@ -6,7 +6,7 @@
     // Every animal can drink() which decreases their thirst by one
     // Every animal can play() which increases both by one
 
-class Animal {
+export class Animal {
     private _hunger:number;
     private _thirst:number;
 
@@ -15,12 +15,12 @@ class Animal {
         this._thirst = 50;
     }
 
-    public eat () {
-        this._hunger--;
+    public eat (amount:number) {
+        this._hunger -= amount;
     }
 
-    public drink () {
-        this._thirst--;
+    public drink (amount) {
+        this._thirst -= amount;
     }
 
     public play () {
@@ -34,6 +34,6 @@ class Animal {
 }
 
 let lion = new Animal();
-lion.eat();
+lion.eat(20);
 
 console.log(lion.hungerLevel);
