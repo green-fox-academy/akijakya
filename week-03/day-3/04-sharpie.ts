@@ -5,7 +5,7 @@
     // We can use() the sharpie objects
     // which decreases inkAmount
 
-class Sharpie {
+export class Sharpie {
     private _color:string;
     private _width:number;
     private _inkAmount:number;
