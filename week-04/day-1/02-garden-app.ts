@@ -1,31 +1,37 @@
 export {}
 
 class Garden {
-    private _flowers:Flower[];
-    private _trees:Tree[];
+    private _plants:Plant[];
 
     constructor () {
-        this._flowers = [];
-        this._trees = [];
+        this._plants = [];
     }
 
     public addFlower (flower:Flower) {
-        this._flowers.push(flower);
+        this._plants.push(flower);
     }
 
     public addTree (tree:Tree) {
-        this._trees.push(tree);
+        this._plants.push(tree);
     }
 
     public reportWaterStatus () {
-        this._flowers.forEach(e => e.reportWaterStatus());
-        this._trees.forEach(e => e.reportWaterStatus());
+        this._plants.forEach(e => e.reportWaterStatus());
+    }
+
+    private get howManyNeedsWater ():number {
+        let plantsThatNeedWatering:number = 0;
+        this._plants.forEach (function (e) {
+            if (e.doesItNeedWater) {
+                plantsThatNeedWatering++;
+            }
+        });
+        return plantsThatNeedWatering;
     }
 
     public watering (waterAmount:number) {
-        let waterPerPlant:number = waterAmount/(this._flowers.length + this._trees.length);
-        this._flowers.forEach (e => e.watering(waterPerPlant));
-        this._trees.forEach (e => e.watering(waterPerPlant));
+        let waterPerPlant:number = waterAmount/this.howManyNeedsWater;
+        this._plants.forEach (e => e.watering(waterPerPlant));
     }
 }
 
@@ -35,29 +41,25 @@ class Plant {
     protected _absorbAbility:number;
     protected _waterNeedLevel:number;
 
-    constructor (color:string, waterLevel?:number) {
-        if (waterLevel != undefined) {
-            this._waterLevel = waterLevel;
-        } else {
-            this._waterLevel = 0;
-        }
+    constructor (color:string, absorbAbility?:number, waterNeedLevel?:number, waterLevel?:number) {
         this._color = color;
-        this._absorbAbility = 0;
-        this._waterNeedLevel = 0;
+        this._absorbAbility = absorbAbility;
+        this._waterNeedLevel = waterNeedLevel;
+        this._waterLevel = waterLevel;
     }
 
     public absorbWater (waterAmount:number) {
         this._waterLevel += waterAmount * this._absorbAbility;
     }
 
-    public doesItNeedWater ():boolean {
+    public get doesItNeedWater ():boolean {
         if (this._waterLevel < this._waterNeedLevel) {
             return true;
         }
     }
 
     public reportWaterStatus () {
-            if (this.doesItNeedWater()) {
+            if (this.doesItNeedWater) {
                 console.log('The ' + this._color + ' ' + this.constructor.name + ' needs water');
             } else {
                 console.log('The ' + this._color + ' ' + this.constructor.name + ' doesnt need water');
@@ -65,25 +67,21 @@ class Plant {
     }
 
     public watering (waterAmount:number) {
-        if (this.doesItNeedWater()) {
+        if (this.doesItNeedWater) {
             this.absorbWater(waterAmount);
         }
     }
 }
 
 class Flower extends Plant {
-    constructor (color:string, waterLevel?:number) {
-        super(color, waterLevel);
-        this._absorbAbility = 0.75;
-        this._waterNeedLevel = 5;
+    constructor (color:string, absorbAbility?:number, waterNeedLevel?:number, waterLevel?:number) {
+        super(color, 0.75, 5, 0);
     }
 }
 
 class Tree extends Plant {
-    constructor (color:string, waterLevel?:number) {
-        super(color, waterLevel);
-        this._absorbAbility = 0.4;
-        this._waterNeedLevel = 10;
+    constructor (color:string, absorbAbility?:number, waterNeedLevel?:number, waterLevel?:number) {
+        super(color, 0.4, 10, 0);
     }
 }
 
@@ -109,4 +107,3 @@ console.log('\nWatering with 70');
 garden.watering(70);
 
 garden.reportWaterStatus();
-
