@@ -28,15 +28,15 @@ class Helicopter extends Vehicle implements Flyable {
         super(numberOfSeats, color, 'Helicopter')
     }
 
-    land():void {
+    public land():void {
         console.log('The ' + this._color + ' ' + this._name + ' landed successfully!');
     }
 
-    fly ():void {
+    public fly ():void {
         console.log('The ' + this._color + ' ' + this._name + ' is currently flying.');
     }
 
-    takeOff ():void {
+    public takeOff ():void {
         console.log('The ' + this._color + ' ' + this._name + ' took of successfully!');
     }
 }
