@@ -1,3 +1,5 @@
+import { Flyable } from "./03-flyable"
+
 export abstract class Animal {
     protected _name:string;
     protected _age:number;
@@ -56,7 +58,7 @@ export class Reptile extends Animal implements Breeder {
     }
 }
 
-export class Bird extends Animal implements Breeder {
+export class Bird extends Animal implements Breeder, Flyable {
     protected _breedType:string;
 
     constructor (name:string, age?:number) {
@@ -72,5 +74,17 @@ export class Bird extends Animal implements Breeder {
 
     public breed ():string {
         return this._breedType;
+    }
+
+    public land():void {
+        console.log('The ' + this._name + ' landed successfully!');
+    }
+
+    public fly ():void {
+        console.log('The ' + this._name + ' is currently flying.');
+    }
+
+    public takeOff ():void {
+        console.log('The ' + this._name + ' took of successfully!');
     }
 }
