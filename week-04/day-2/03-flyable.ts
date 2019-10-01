@@ -1,7 +1,7 @@
 export interface Flyable {
-    land();
-    fly();
-    takeOff();
+    land():void;
+    fly():void;
+    takeOff():void;
 }
  export abstract class Vehicle {
     protected _name:string;
