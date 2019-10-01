@@ -1,3 +1,3 @@
 export interface Printable {
-    printAllFields()
+    printAllFields():void;
 }
