@@ -88,7 +88,7 @@ class Carrier {
 
     public get getStatus ():string {
         if (this._HP > 0) {
-            return 'HP: ' + this._HP + ', Aircraft count: ' + this._aircrafts.length + ', Ammo Storage: ' + this._ammoStorage + ', Total damage: ' + this.totalDamage + '\nAircrafts:\n' + this._aircrafts.forEach(e => e.getStatus);
+            return 'HP: ${this._HP} Aircraft count: ${this._aircrafts.length}, Ammo Storage: ${this._ammoStorage}, Total damage: ${this.totalDamage}\nAircrafts:\n${this._aircrafts.forEach(e => e.getStatus)}';
         } else {
             return 'It\'s dead Jim :('
         }
