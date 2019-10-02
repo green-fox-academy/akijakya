@@ -16,7 +16,11 @@ export function maxOfThree(a: number, b: number, c: number): number {
 
 export function median(pool: number[]): number {
   let sortedPool:number [] = pool.sort();
-  return sortedPool[Math.floor((pool.length - 1) / 2)];
+  if (sortedPool.length % 2 !== 0) {
+    return sortedPool[Math.floor((pool.length - 1) / 2)];
+  } else {
+    return (sortedPool[sortedPool.length/2 - 1] + sortedPool[sortedPool.length/2]) / 2;
+  }
 }
 
 export function isVowel(character: string): boolean {
