@@ -3,6 +3,7 @@ import { Apple } from './01-apples'
 import { Sum } from './02-sum'
 import { Anagram } from './03-anagram'
 import { Letters } from './04-count-letters'
+import { fibonacciSequence } from './05-fibonacci'
 
 test ('apples', t => {
     let apple = new Apple;
@@ -61,5 +62,15 @@ test ('count letters in a word', t => {
     const expected = JSON.stringify({ a: 1, p: 2, l: 1, e: 1, s: 1 });
 
     t.equal(actual, expected, 'should return an object with corresponding key-value pairs');
+    t.end();
+});
+
+test ('member of the fibonacci sequence at a given index', t => {
+    t.equal(fibonacciSequence(10), 34, 'should return 34');
+    t.end();
+});
+
+test ('member of the fibonacci sequence at a given index', t => {
+    t.throws(fibonacciSequence(-1), Error, 'should return 34');
     t.end();
 });
