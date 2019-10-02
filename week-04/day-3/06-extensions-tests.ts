@@ -29,7 +29,7 @@ test('max of three: third', function (t: any): any {
 });
 
 test('max of three: second', function (t: any): any {
-    t.equal(maxOfThree(9, 6, 5), 9);
+    t.equal(maxOfThree(4, 6, 5), 6);
     t.end();
   });
 
