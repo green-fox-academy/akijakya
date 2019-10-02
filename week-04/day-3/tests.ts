@@ -2,6 +2,7 @@ import * as test from 'tape'
 import { Apple } from './01-apples'
 import { Sum } from './02-sum'
 import { Anagram } from './03-anagram'
+import { Letters } from './04-count-letters'
 
 test ('apples', t => {
     let apple = new Apple;
@@ -50,5 +51,15 @@ test ('anagrams with actual anagrams', t => {
     const expected = true;
 
     t.equal(actual, expected, 'should return true');
+    t.end();
+});
+
+test ('count letters in a word', t => {
+    let letters = new Letters;
+    let word:string = 'apples';
+    const actual = JSON.stringify(letters.countLetters(word));
+    const expected = JSON.stringify({ a: 1, p: 2, l: 1, e: 1, s: 1 });
+
+    t.equal(actual, expected, 'should return an object with corresponding key-value pairs');
     t.end();
 });
