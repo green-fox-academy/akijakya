@@ -17,6 +17,6 @@ export class Sharpie {
     }
 
     public use (amount:number) {
-        this._inkAmount -= amount;
+        return this._inkAmount -= amount;
     }
 }
