@@ -71,6 +71,11 @@ test ('member of the fibonacci sequence at a given index', t => {
 });
 
 test ('member of the fibonacci sequence at a given index', t => {
-    t.throws(fibonacciSequence(-1), Error, 'should return 34');
+    t.equal(fibonacciSequence(1), 0, 'should return 0');
+    t.end();
+});
+
+test ('member of the fibonacci sequence at a given index', t => {
+    t.throws(function () {fibonacciSequence(-1)}, Error, 'should return exception');
     t.end();
 });
