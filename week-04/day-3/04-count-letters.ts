@@ -1,8 +1,7 @@
 export class Letters {
     public countLetters (word:string) {
         let letters = {};
-        let wordLetters:string [] = word.split('');
-        wordLetters.forEach(function (e) {
+        word.split('').forEach(function (e) {
             if (letters[e] === undefined) {
                 letters[e] = 1;
             } else {
@@ -12,3 +11,7 @@ export class Letters {
         return letters;
     }
 }
+
+let letters = new Letters;
+let word:string = 'mindegggyyyyy';
+console.log(letters.countLetters(word));
