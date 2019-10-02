@@ -59,7 +59,7 @@ test('is vowel: u', function (t: any): any {
 });
 
 test('is vowel: k', function(t: any): any {
-  t.notOk(isVowel('k'));
+  t.ok(isVowel('k'));
   t.end();
 });
 
