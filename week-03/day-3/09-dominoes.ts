@@ -56,3 +56,7 @@ for (let i:number = 0; i < dominoes.length-1; i++) {
 }
 
 print(dominoes);
+
+for (let domino of dominoes) {
+    domino.printAllFields();
+}
