@@ -59,12 +59,12 @@ test('is vowel: u', function (t: any): any {
 });
 
 test('is vowel: k', function(t: any): any {
-  t.ok(isVowel('k'));
+  t.notOk(isVowel('k'));
   t.end();
 });
 
 test('is vowel: á', function(t: any): any {
-    t.notOk(isVowel('á'));
+    t.ok(isVowel('á'));
     t.end();
   });
 
@@ -79,6 +79,6 @@ test('translate: lagopus', function (t: any): any {
 });
 
 test('translate: állatok', function (t: any): any {
-    t.equal(translate('lagopus'), 'ávállavatovok');
+    t.equal(translate('állatok'), 'ávállavatovok');
     t.end();
   });
