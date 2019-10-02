@@ -11,7 +11,3 @@ export class Letters {
         return letters;
     }
 }
-
-let letters = new Letters;
-let word:string = 'mindegggyyyyy';
-console.log(letters.countLetters(word));
