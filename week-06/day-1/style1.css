@@ -1,0 +1,30 @@
+/*html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing:inherit;
+} 
+*/
+
+.container {
+    display: flex;
+}
+
+.item {
+    width: 100px;
+    height: 100px;
+    flex-basis: 100px;
+}
+
+.green {
+    background-color: #51d400;
+}
+
+.yellow {
+    background-color: #ffd62a;
+}
+
+.purple {
+    background-color: #b02aff;
+}
