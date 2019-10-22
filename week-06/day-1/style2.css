@@ -1,0 +1,24 @@
+/*html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing:inherit;
+} 
+*/
+
+.container {
+    display: flex;
+    flex-flow: column;
+    background-color: #ffd62a;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    background-color: #b02aff;
+    width: 100px;
+    height: 100px;
+    flex-basis: 100px;
+}
