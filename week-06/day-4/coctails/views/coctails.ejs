@@ -10,9 +10,9 @@
     <div class='page'>
         <h1>Coctails</h1>
         <div class='alcohols'>
-            <a>All</a>
+            <a href='/'>All</a>
             <% alcoholList.forEach(function(item){ %>
-            <a><%= item %></a>
+            <a href='/?alcohol=<%= item %>'><%= item %></a>
             <% }); %>
         </div>
         <div class='menu'>
@@ -33,7 +33,6 @@
                     </ul>
                 </div>
         </div>
-        <p>Selected alcohol: <%= alcohol%></p>
     </div> 
     <script>
         let listElementsNames = document.getElementsByClassName('coctail-names');
