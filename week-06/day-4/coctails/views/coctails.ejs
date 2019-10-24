@@ -4,19 +4,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Coctails</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
 </head>
 <body>
-    <h1>Coctails</h1>
-    <ul>
-        <% alcoholList.forEach(function(item){ %>
-        <li><%= item %></li>
-        <% }); %>
-    </ul>
-    <ul>
-        <% cocktails.forEach(function(item){ %>
-        <li><%= item.name %></li>
-        <% }); %>
-    </ul>
-    <p>Selected alcohol: <%= alcohol%></p>
+    <div class='page'>
+        <h1>Coctails</h1>
+        <div class='alcohols'>
+            <ul>
+                <% alcoholList.forEach(function(item){ %>
+                <a><%= item %></a>
+                <% }); %>
+            </ul>
+        </div>
+        <div class='menu'>
+            <div class='list'>
+                <ul>
+                    <li class='menu-header'>Name</li>
+                    <% cocktails.forEach(function(item){ %>
+                    <li><%= item.name %></li>
+                    <% }); %>
+                </ul>
+            </div>
+            <div class='list'>
+                    <ul>
+                        <li class='menu-header'>Price</li>
+                        <% cocktails.forEach(function(item){ %>
+                        <li><strong><%= item.price %></strong> Ft</li>
+                        <% }); %>
+                    </ul>
+                </div>
+        </div>
+        <p>Selected alcohol: <%= alcohol%></p>
+    </div> 
 </body>
 </html>
