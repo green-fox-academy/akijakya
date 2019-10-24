@@ -18,16 +18,18 @@ const alcoholList = ['gin', 'vodka', 'rum', 'tequila'];
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
+app.use('/static', express.static('static'));
+
 // home page with a name query
 app.get('/', (req, res) => {
     if (req.query.alcohol !== undefined) {
       var alcohol = req.query.alcohol;
       var filteredCocktails = [];
       cocktails.forEach(e => e.contains.forEach (function (item) {if (item === alcohol){filteredCocktails.push(e)}}));
-      res.render('coctails', {cocktails:filteredCocktails, alcohol:alcohol});
+      res.render('coctails', {cocktails:filteredCocktails, alcoholList:alcoholList, alcohol:alcohol});
     } else {
       var alcohol = 'None';
-      res.render('coctails', {cocktails:cocktails, alcohol:alcohol});
+      res.render('coctails', {cocktails:cocktails,  alcoholList:alcoholList, alcohol:alcohol});
     }
 });
 

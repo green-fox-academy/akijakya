@@ -6,7 +6,12 @@
     <title>Coctails</title>
 </head>
 <body>
-    <h1>Coctails:</h1>
+    <h1>Coctails</h1>
+    <ul>
+        <% alcoholList.forEach(function(item){ %>
+        <li><%= item %></li>
+        <% }); %>
+    </ul>
     <ul>
         <% cocktails.forEach(function(item){ %>
         <li><%= item.name %></li>
