@@ -52,6 +52,13 @@ li {
     background-color: #eee;
 }
 
+.dark {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    background-color: #ddd;
+}
+
 .menu-header {
     text-transform: uppercase;
     text-align: center;

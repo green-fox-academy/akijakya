@@ -19,8 +19,8 @@
             <div class='list name'>
                 <ul>
                     <li class='menu-header'>Name</li>
-                    <% cocktails.forEach(function(item){ %>
-                    <li><%= item.name %></li>
+                    <% cocktails.forEach(function(item, index){ %>
+                    <li class='coctail-names'><%= item.name %></li>
                     <% }); %>
                 </ul>
             </div>
@@ -28,12 +28,25 @@
                     <ul>
                         <li class='menu-header'>Price</li>
                         <% cocktails.forEach(function(item){ %>
-                        <li><strong><%= item.price %></strong> Ft</li>
+                        <li class='coctail-prices'><strong><%= item.price %></strong> Ft</li>
                         <% }); %>
                     </ul>
                 </div>
         </div>
         <p>Selected alcohol: <%= alcohol%></p>
     </div> 
+    <script>
+        let listElementsNames = document.getElementsByClassName('coctail-names');
+        let listElementsPrices = document.getElementsByClassName('coctail-prices');
+        // listElements.forEach(function (e, i){
+        //         e.className = 'light';
+        // });
+        for (let i = 0; i < listElementsNames.length; i++) {
+                listElementsNames[i].className = 'dark';
+        }
+        for (let i = 0; i < listElementsPrices.length; i++) {
+                listElementsPrices[i].className = 'dark';
+        }
+    </script> 
 </body>
 </html>
