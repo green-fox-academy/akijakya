@@ -15,20 +15,20 @@ const cocktails = [
 
 const alcoholList = ['gin', 'vodka', 'rum', 'tequila'];
 
-var alcohol = 'None';
-
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
 // home page with a name query
 app.get('/', (req, res) => {
-    // if (req.query.alcohol !== undefined) {
-    res.render('coctails', {cocktails:cocktails, alcohol:alcohol});
-    // } else {
-    //   var alcohol = req.query.alcohol;
-    //   var filteredCocktails = [];
-      // res.render('coctails', {cocktails:filteredCocktails, alcohol:alcohol});
-    // }
+    if (req.query.alcohol !== undefined) {
+      var alcohol = req.query.alcohol;
+      var filteredCocktails = [];
+      cocktails.forEach(e => e.contains.forEach (function (item) {if (item === alcohol){filteredCocktails.push(e)}}));
+      res.render('coctails', {cocktails:filteredCocktails, alcohol:alcohol});
+    } else {
+      var alcohol = 'None';
+      res.render('coctails', {cocktails:cocktails, alcohol:alcohol});
+    }
 });
 
 // start express app on port 3000
