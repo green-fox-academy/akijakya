@@ -15,12 +15,20 @@ const cocktails = [
 
 const alcoholList = ['gin', 'vodka', 'rum', 'tequila'];
 
+var alcohol = 'None';
+
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
 // home page with a name query
 app.get('/', (req, res) => {
-    res.render('coctails', {cocktails:cocktails, alcoholList:alcoholList});
+    // if (req.query.alcohol !== undefined) {
+    res.render('coctails', {cocktails:cocktails, alcohol:alcohol});
+    // } else {
+    //   var alcohol = req.query.alcohol;
+    //   var filteredCocktails = [];
+      // res.render('coctails', {cocktails:filteredCocktails, alcohol:alcohol});
+    // }
 });
 
 // start express app on port 3000
