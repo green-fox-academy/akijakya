@@ -10,14 +10,13 @@
     <div class='page'>
         <h1>Coctails</h1>
         <div class='alcohols'>
-            <ul>
-                <% alcoholList.forEach(function(item){ %>
-                <a><%= item %></a>
-                <% }); %>
-            </ul>
+            <a>All</a>
+            <% alcoholList.forEach(function(item){ %>
+            <a><%= item %></a>
+            <% }); %>
         </div>
         <div class='menu'>
-            <div class='list'>
+            <div class='list name'>
                 <ul>
                     <li class='menu-header'>Name</li>
                     <% cocktails.forEach(function(item){ %>
@@ -25,7 +24,7 @@
                     <% }); %>
                 </ul>
             </div>
-            <div class='list'>
+            <div class='list price'>
                     <ul>
                         <li class='menu-header'>Price</li>
                         <% cocktails.forEach(function(item){ %>
