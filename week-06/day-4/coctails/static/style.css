@@ -8,7 +8,6 @@ body {
 .page {
     display: inherit;
     width: 50%;
-    background: yellow;
     flex-direction: column;
     align-items: flex-start;
 }
@@ -28,11 +27,6 @@ a {
     flex-direction: row;
     width: 100%;
     justify-content: center;
-    background: green;
-}
-
-.list {
-    background: blue;
 }
 
 .name {
@@ -69,7 +63,6 @@ li {
 
 ul {
     list-style-type: none;
-    background: orange;
     list-style: none;
     padding-left: 0;
 }
