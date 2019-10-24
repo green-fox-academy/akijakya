@@ -5,10 +5,13 @@ const PORT = 3000;
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
-// home page
+// home page with a name query
 app.get('/', (req, res) => {
-  // render `home.ejs`
-  res.render('home');
+  if (req.query.name !== undefined) {
+    res.render('home', {name: req.query.name});
+  } else {
+    res.render('home', {name: 'Guest'});
+  }
 });
 
 // start express app on port 3000
