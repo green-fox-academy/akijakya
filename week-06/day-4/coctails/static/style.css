@@ -34,6 +34,18 @@ a {
     margin: 10px 5px 10px 0;
 }
 
+.coctail-name-span {
+    font-size: 25px;
+}
+
+.alcoholic-span {
+    font-size: 15px;
+}
+
+.contain-p {
+    font-size: 20px;
+}
+
 .price {
     width: 25%;
     margin: 10px 0;
