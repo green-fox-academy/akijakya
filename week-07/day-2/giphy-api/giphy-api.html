@@ -4,14 +4,28 @@
     <meta charset="UTF-8">
     <title>Giphy API</title>
     <style>
+        body {
+            display: flex;
+        }
+
+        #GIFs {
+            display:inherit;
+            flex: 1 1 0;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px;
+        }
+
         .GIFbox {
-            background: white;
+            display: inherit;
+            list-style-type: none;
+            margin: 10px;
+            align-items: center;
         }
     </style>
 </head>
 <body>
     <ul id="GIFs"></ul>
-    <img id="GIF">
     <script src="giphy.js"></script>
 </body>
 </html>
