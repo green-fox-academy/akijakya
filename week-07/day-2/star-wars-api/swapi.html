@@ -7,11 +7,41 @@
         body {
             display: flex;
             background: yellow;
+            justify-content: center;
+        }
+        #page {
+            display: inherit;
+            background: green;
+            width: 80%;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-weight: 50;
+            font-size: 26px;
+        }
+
+        #lists {
+            display: inherit;
+            flex-direction: row;
         }
     </style>
 </head>
 <body>
-    <div id=""
+    <div id="page">
+        <div id='header'>
+            <h1>Enter character name</h1>
+            <input type="text" class="search-box">
+            <button type="submit" class="btn">search</button>
+        </div>
+        <div id='lists'>
+            <ul class='list'></ul>
+            <ul class='list'></ul>
+        </div>
+        <div id='footer'>
+            <h1>click to list movies</h1>
+        </div>
+    </div>
     <script src="swapi.js"></script>
 </body>
 </html>
