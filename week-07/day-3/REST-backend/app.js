@@ -3,19 +3,19 @@
 const path = require('path');
 const bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
-const express = require ('express');
+const express = require('express');
 const app = express();
 const PORT = 8080;
 
 app.use(express.static('assets'));
 app.use(bodyParser.json());
 
-app.get('/', function(req, res) {   
-	res.sendFile(path.join(__dirname, 'index.html'));
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.get('/doubling', (req, res) => {
-    if(req.query.input !== undefined){
+    if (req.query.input !== undefined) {
 
         let resultObj = {
             "received": req.query.input,
@@ -30,7 +30,7 @@ app.get('/doubling', (req, res) => {
         let errMessage = {
             "error": "Please provide an input!"
         }
-        
+
         // res.status(400);
         // res.setHeader("Content-type", "application/json");
         res.send(errMessage);
@@ -66,19 +66,17 @@ app.get('/greeter', (req, res) => {
 // });
 
 app.get('/appenda/:appendable', (req, res) => {
-    if(req.params.appendable !== undefined){
+    if (req.params.appendable !== undefined) {
         let resultObj = {
             "appended": req.params.appendable + 'a'
         }
         res.send(resultObj);
-    } else {      
+    } else {
         res.status(404);
     }
 });
 
 app.post('/dountil/:action', urlencodedParser, (req, res) => {
-    console.log(req.params.action);
-    console.log(req.body);
     if (req.params.action === "sum") {
         let sum = 0;
         for (let i = 0; i < req.body.until + 1; i++) {
