@@ -61,9 +61,10 @@ app.get('/greeter', (req, res) => {
     }
 });
 
-// app.get('/appenda/', (req, res) => {  
-//     res.status(404);
-// });
+app.get('/appenda', (req, res) => {  
+    res.status(404);
+    res.send(404);
+});
 
 app.get('/appenda/:appendable', (req, res) => {
     if (req.params.appendable !== undefined) {
@@ -71,8 +72,6 @@ app.get('/appenda/:appendable', (req, res) => {
             "appended": req.params.appendable + 'a'
         }
         res.send(resultObj);
-    } else {
-        res.status(404);
     }
 });
 
