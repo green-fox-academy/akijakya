@@ -58,6 +58,28 @@ app.get('/greeter', (req, res) => {
     }
 });
 
+app.get('/appenda/:appendable', (req, res) => {
+    if(req.params.appendable !== undefined){
+
+        let resultObj = {
+            "appended": req.params.appendable + 'a'
+        }
+
+        // res.status(200);
+        // res.setHeader("Content-type", "application/json");
+        res.send(resultObj);
+    } else {
+
+        // let errMessage = {
+        //     "error": "Please provide an input!"
+        // }
+        
+        res.status(404);
+        // res.setHeader("Content-type", "application/json");
+        // res.send(errMessage);
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`The server is up and running on ${PORT}`);
 });
