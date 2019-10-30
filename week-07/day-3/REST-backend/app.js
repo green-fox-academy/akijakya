@@ -1,11 +1,14 @@
 'use strict';
 
 const path = require('path');
+const bodyParser = require('body-parser');
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 const express = require ('express');
 const app = express();
 const PORT = 8080;
 
 app.use(express.static('assets'));
+app.use(bodyParser.json());
 
 app.get('/', function(req, res) {   
 	res.sendFile(path.join(__dirname, 'index.html'));
@@ -58,6 +61,10 @@ app.get('/greeter', (req, res) => {
     }
 });
 
+// app.get('/appenda/', (req, res) => {  
+//     res.status(404);
+// });
+
 app.get('/appenda/:appendable', (req, res) => {
     if(req.params.appendable !== undefined){
         let resultObj = {
@@ -66,6 +73,39 @@ app.get('/appenda/:appendable', (req, res) => {
         res.send(resultObj);
     } else {      
         res.status(404);
+    }
+});
+
+app.post('/dountil/:action', urlencodedParser, (req, res) => {
+    console.log(req.params.action);
+    console.log(req.body);
+    if (req.params.action === "sum") {
+        let sum = 0;
+        for (let i = 0; i < req.body.until + 1; i++) {
+            sum += i;
+        }
+
+        let resultObj = {
+            "result": sum
+        }
+
+        res.send(resultObj);
+    } else if (req.params.action === "factor") {
+        let factorial = 1;
+        for (let i = 1; i < req.body.until + 1; i++) {
+            factorial *= i;
+        }
+
+        let resultObj = {
+            "result": factorial
+        }
+
+        res.send(resultObj);
+    } else {
+        let errMessage = {
+            "error": "Please provide a number!"
+        }
+        res.send(errMessage);
     }
 });
 
