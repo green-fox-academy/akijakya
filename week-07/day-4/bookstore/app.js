@@ -63,8 +63,9 @@ app.get('/books', function(req, res) {
             res.status(500).send('Database error');
             return;
         }
-        res.status(200);
+        // res.status(200);
         // res.setHeader("Content-type", "application/json");
+        // res.send(rows);
         res.sendFile(path.join(__dirname, 'index.html'));
     });
 });
