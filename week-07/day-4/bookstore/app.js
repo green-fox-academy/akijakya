@@ -1,6 +1,6 @@
 'use strict';
 
-// const path = require('path');
+const path = require('path');
 // const bodyParser = require('body-parser');
 // const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
@@ -42,9 +42,21 @@ app.get('/hello', function (req, res) {
     res.send('hello world');
 });
 
+// app.get('/books', function(req, res) {
+//     connection.query('SELECT book_name FROM book_mast;', function(err, rows) {
+//         if (err) {
+//             console.log(err.toString());
+//             res.status(500).send('Database error');
+//             return;
+//         }
+//         res.status(200);
+//         res.setHeader("Content-type", "application/json");
+//         res.send(rows);
+//     });
+// });
+
 app.get('/books', function(req, res) {
     connection.query('SELECT book_name FROM book_mast;', function(err, rows) {
-        console.log(rows);
         if (err) {
             console.log(err.toString());
             res.status(500).send('Database error');
