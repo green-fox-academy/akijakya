@@ -7,7 +7,7 @@ const path = require('path');
 // requiring express
 const express = require('express');
 const app = express();
-const PORT = 3111;
+const PORT = 3000;
 
 // requiring env
 const env = require('dotenv').config();
@@ -57,14 +57,15 @@ app.get('/hello', function (req, res) {
 
 app.get('/books', function(req, res) {
     connection.query('SELECT book_name FROM book_mast;', function(err, rows) {
+        // console.log(rows);
         if (err) {
             console.log(err.toString());
             res.status(500).send('Database error');
             return;
         }
         res.status(200);
-        res.setHeader("Content-type", "application/json");
-        res.send(rows);
+        // res.setHeader("Content-type", "application/json");
+        res.sendFile(path.join(__dirname, 'index.html'));
     });
 });
 
