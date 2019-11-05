@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ClickThreeTimes</title>
+</head>
+<body>
+    <button>Click me!</button>
+    <p></p>
+    <script>
+    let btn = document.querySelector('button');
+    let clickCounter = 0;
+    let startTime;
+
+    function changeP () {
+        let p = document.querySelector('p');
+        if (clickCounter > 2) {
+            p.textContent = '5 seconds elapsed and clicked 3 times';
+        }
+    }
+
+    window.onload = ( e => {
+        startTime = e.timeStamp;
+        console.log(startTime);
+    });
+
+    btn.addEventListener('click', e => {
+        clickCounter++;
+        if (e.timeStamp - startTime >= 5000){
+            changeP();
+        }
+    });
+
+    setTimeout (changeP, 5000); 
+    
+    </script>
+</body>
+</html>
