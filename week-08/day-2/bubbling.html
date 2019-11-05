@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <title>Workshop: EventListeners</title>
     <style>
-        :root {
-            --pos-x: 0px;
-            --pos-y: 10px;
-        }
         html, body {
             margin: 0;
             padding: 0;
@@ -26,8 +22,6 @@
             background-image: url("assets/mp.jpg");
             background-size: 200%;
             background-repeat: no-repeat;
-            background-position-y: var(--pos-y);
-            background-position-x: var(--pos-x);
         }
     </style>
   </head>
@@ -52,14 +46,51 @@
     //      - one for zooming
 
     let background = document.querySelector('.img-inspector');
-    let root = document.documentElement;
     let btns = document.querySelector('nav');
+
+    let posX = 0;
+    let posY = 0;
+    let size = 200;
 
     btns.addEventListener("click", function(e) {
         if (e.target.attributes["data-direction"].value === 'up'){
-            console.log(root.style.getPropertyValue('--pos-y'));
-            root.style.setProperty('--pos-y', 20 + "px");
-            // background.style.backgroundPositionY = posY;
+            posY -= 10;
+            background.style.backgroundPositionY = `${posY}px`;
+        }
+    });
+    
+    btns.addEventListener("click", function(e) {
+        if (e.target.attributes["data-direction"].value === 'down'){
+            posY += 10;
+            background.style.backgroundPositionY = `${posY}px`;
+        }
+    });
+
+    btns.addEventListener("click", function(e) {
+        if (e.target.attributes["data-direction"].value === 'left'){
+            posX -= 10;
+            background.style.backgroundPositionX = `${posX}px`;
+        }
+    });
+
+    btns.addEventListener("click", function(e) {
+        if (e.target.attributes["data-direction"].value === 'right'){
+            posX += 10;
+            background.style.backgroundPositionX = `${posX}px`;
+        }
+    });
+
+    btns.addEventListener("click", function(e) {
+        if (e.target.attributes["data-direction"].value === 'in'){
+            size += 10;
+            background.style.backgroundSize = `${size}%`;
+        }
+    });
+
+    btns.addEventListener("click", function(e) {
+        if (e.target.attributes["data-direction"].value === 'out'){
+            size -= 10;
+            background.style.backgroundSize = `${size}%`;
         }
     });
     </script>
