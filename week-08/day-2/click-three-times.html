@@ -12,10 +12,11 @@
     let btn = document.querySelector('button');
     let clickCounter = 0;
     let startTime;
+    let clickedBefore5 = false;
 
     function changeP () {
         let p = document.querySelector('p');
-        if (clickCounter > 2) {
+        if (clickCounter > 2 & clickedBefore5 === false) {
             p.textContent = '5 seconds elapsed and clicked 3 times';
         }
     }
@@ -26,14 +27,12 @@
     });
 
     btn.addEventListener('click', e => {
-        clickCounter++;
-        if (e.timeStamp - startTime >= 5000){
-            changeP();
+        if (e.timeStamp - startTime <= 5000){
+            clickedBefore5 = true;
         }
+        clickCounter++;
+        changeP();
     });
-
-    setTimeout (changeP, 5000); 
-    
     </script>
 </body>
 </html>
