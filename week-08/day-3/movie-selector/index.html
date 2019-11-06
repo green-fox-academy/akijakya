@@ -10,16 +10,17 @@
     <form>
         <h1>Movie Selector</h1>
         <div id='selectors'>
-            <select>
-                <option>By email</option>
-                <option>By telephone</option>
+            <select id='genre-selector'>
+                <option value="" disabled selected>Select a genre</option>
+                <option>Sci-fi</option>
+                <option>Drama</option>
+                <option>Comedy</option>
             </select>
-            <select>
-                <option>By email</option>
-                <option>By telephone</option>
+            <select id='movie-selector'>
+                <option value="" disabled selected>Select a movie</option>
             </select>
         </div>
-        <p>The selected movie is: <span id='selectedTitle'></span></p>
+        <p>The selected movie is: <span id='selected-title'></span></p>
     </form>
     <script src='app.js'></script>
 </body>
