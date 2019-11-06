@@ -1,0 +1,39 @@
+body {
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+    display: inherit;
+    box-sizing: border-box;
+    flex: 0 0 60%;
+    min-width: 300px;
+    flex-direction: column;
+    background: #f4bab9;
+    border-radius: 10px;
+    box-shadow: 10px 10px 0px 0px rgba(129,143,208,1);
+    padding: 5%;
+}
+
+#selectors {
+    display: inherit;
+}
+
+select {
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    display: inherit;
+    flex: 1 1 100%;
+}
+
+select:focus {
+    outline: none;
+}
+
+#movie-selector {
+    margin-left: 0.5em;
+}
