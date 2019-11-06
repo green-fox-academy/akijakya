@@ -31,6 +31,8 @@ input[type="text"],
 input[type="password"] {
     height: 40px;
     margin-top: -15px;
+    border: solid #eee 1px;
+    border-radius: 2px;
 }
 
 input[type="submit"] {
@@ -43,6 +45,21 @@ input[type="submit"] {
     font-weight: 600;
     border: none;
     border-radius: 20px;
+}
+
+#password {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+#pass-status {
+    float: right;
+    margin-left: -25px;
+    margin-top: -3px;
+    position: absolute;
+    z-index: 2;
+    opacity: 0.3;
 }
 
 h1 {

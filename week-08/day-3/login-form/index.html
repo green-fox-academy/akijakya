@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,7 +13,10 @@
         <label for="name">Username</label><br/>
         <input autofocus type="text" id="name" name="name"><br/>
         <label for="password">Password</label><br/>
-        <input type="text" id="password" name="password">
+        <div>
+            <input type="password" id="password" name="password">
+            <span toggle="#password" id="pass-status" class="fa fa-eye" onClick="viewPassword()""></span>
+        </div>  
         <a href="https://en.wikipedia.org/wiki/Password">Forgot password?</a>
         <input type="submit" id="login" value="Login" />
     </form>
