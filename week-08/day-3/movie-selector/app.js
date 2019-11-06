@@ -23,5 +23,5 @@ function filterMovies () {
 }
 
 function displayTitle () {
-    let movie = movieSelector.options[movieSelector.selectedIndex].text;
+    document.getElementById('selected-title').innerText = movieSelector.options[movieSelector.selectedIndex].text;
 }

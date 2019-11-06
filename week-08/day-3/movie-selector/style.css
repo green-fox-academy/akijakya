@@ -39,3 +39,7 @@ select:focus {
 #movie-selector {
     margin-left: 0.5em;
 }
+
+#selected-title {
+    font-style: italic;
+}
