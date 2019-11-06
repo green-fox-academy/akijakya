@@ -10,23 +10,23 @@
     <form>
         <h1>Movie Selector</h1>
         <div id='selectors'>
-            <select id='genre-selector'>
+            <select id='genre-selector' onchange="filterMovies()">
                 <option value="" disabled selected>Select a genre</option>
                 <option>Sci-fi</option>
                 <option>Drama</option>
                 <option>Comedy</option>
             </select>
-            <select id='movie-selector'>
+            <select id='movie-selector' onchange="displayTitle()">
                 <option value="" disabled selected>Select a movie</option>
-                <option class="sci-fi drama">Moon</option>
-                <option class="sci-fi">2001: A Space Odyssey</option>
-                <option class="sci-fi drama">Contact</option>
-                <option class="drama">Darkest Hour</option>
-                <option class="drama">There Will Be Blood</option>
-                <option class="drama comedy">American Beauty</option>
-                <option class="comedy">Airplane!</option>
-                <option class="comedy">Deadpool</option>
-                <option class="comedy">Wayne's World</option>
+                <option class="movie Sci-fi Drama">Moon</option>
+                <option class="movie Sci-fi">2001: A Space Odyssey</option>
+                <option class="movie Sci-fi Drama">Contact</option>
+                <option class="movie Drama">Darkest Hour</option>
+                <option class="movie Drama">There Will Be Blood</option>
+                <option class="movie Drama Comedy">American Beauty</option>
+                <option class="movie Comedy">Airplane!</option>
+                <option class="movie Comedy">Deadpool</option>
+                <option class="movie Comedy">Wayne's World</option>
             </select>
         </div>
         <p>The selected movie is: <span id='selected-title'></span></p>
