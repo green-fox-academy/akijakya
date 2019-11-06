@@ -14,23 +14,23 @@
     <form>
         <div>
             <h1>What is your favorite pet?</h1>
-            <input type="radio" id="dog" name="animal" />
+            <input type="radio" id="dog" name="animal" onclick="enableButtons()"/>
             <label for="dog">Dog</label><br/>
-            <input type="radio" id="cat" name="animal" />
+            <input type="radio" id="cat" name="animal" onclick="enableButtons()"/>
             <label for="cat">Cat</label><br/>
-            <input type="radio" id="fish" name="animal" />
+            <input type="radio" id="fish" name="animal" onclick="enableButtons()"/>
             <label for="fish">Viktor, the goldfish</label>
         </div>
         <div>
             <h1>Do you want to sign up for cat facts?</h1>
-            <input type="radio" id="yes" name="decision" />
+            <input type="radio" id="yes" name="decision" onclick="enableButtons()"/>
             <label for="yes">Yes</label><br/>
-            <input type="radio" id="no" name="decision" />
+            <input type="radio" id="no" name="decision" onclick="enableButtons()"/>
             <label for="no">No</label>
         </div>
         <div id="buttons">
-            <button disabled>I love cats</button>
-            <button disabled>Sign up</button>
+            <button id='catbutton' disabled>I love cats</button>
+            <button id='signup' disabled>Sign up</button>
         </div>
     </form>
     <script src='app.js'></script>
