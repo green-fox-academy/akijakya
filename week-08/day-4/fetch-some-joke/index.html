@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fetch some joke</title>
+</head>
+<body>
+    <div id="joke"></div>
+    <button>Gimme a joke</button>
+    <script>
+        let joke = document.getElementById('joke');
+        
+        let btn = document.getElementsByTagName('button')[0];
+        
+        function fetchJoke () {
+            fetch ('http://api.icndb.com/jokes/random')
+            .then(response => response.json())
+            // .then(myJson => console.log(myJson.value.joke));
+            .then(myJson => joke.textContent = myJson.value.joke)
+            .catch((reason) => {
+                console.log(reason);
+                console.log('Some error happened');
+            });
+        }
+
+        btn.onclick = fetchJoke;
+    </script>
+</body>
+</html>
