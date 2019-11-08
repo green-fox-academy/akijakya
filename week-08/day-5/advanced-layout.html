@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Advanced layout</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #header {
+            background: purple;
+            margin: 0;
+            padding: 20px 10%;
+            height: 70px;
+            display: grid;
+            grid-template-columns: repeat(7, minmax(30px, auto));
+            grid-gap: 10px;
+            box-sizing: border-box;
+        }
+
+        .button {
+            background: turquoise;
+        }
+
+        #content {
+            margin: 10px 10%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(2, minmax(300px, 300px));
+            grid-gap: 10px;
+            box-sizing: border-box;
+        }
+
+        .post {
+            background: chartreuse;
+        }
+
+        #pictures {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+            /* grid-auto-rows: minmax(300px, auto); */
+        }
+
+        .picture-box {
+            background: chartreuse;
+            height: auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .image {
+            background: red;
+            height: 100%;
+        }
+
+        .footer {
+            height: 50px;
+            margin: 10px 10%;
+            background: gray;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="button"></div>
+        <div class="button"></div>
+        <div class="button"></div>
+        <div class="button"></div>
+    </div>
+    <div id="content">
+        <div class="post"></div>
+        <div class="post"></div>
+        <div class="post"></div>
+        <div id="pictures">
+            <div class="picture-box">
+                <div class="image"></div>
+            </div>
+            <div class="picture-box">
+                <div class="image"></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+</html>
