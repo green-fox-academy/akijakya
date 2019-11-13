@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buttons</title>
+    <style>
+        body {
+            background: #2f3060;
+        }
+
+        #buttons {
+            margin: 20% auto;
+            width: 80%;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(100px, 200px));
+            grid-gap: 50px;
+            justify-content: center;
+        }
+
+        button[class] {
+            height: 70px;
+            border: none;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0px -5px 0px 0px rgba(0,0,0,0.5), inset 0px 2px 0px 0px rgba(255,255,255,0.2);
+        }
+
+        button:hover {
+            filter: brightness(110%);
+        }
+
+        button:active {
+            filter: brightness(90%);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        p {
+            color: white;
+            opacity: 0.5;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: larger;
+            margin: 0;
+        }
+
+        .blue {
+            background: #3c5a99;
+        }
+
+        .green {
+            background: #17a24f;
+        }
+
+        .red {
+            background: #d24332;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="buttons">
+        <button class="blue"><p>Blue</p></button>
+        <button class="green"><p>Green</p></button>
+        <button class="red"><p>Red</p></button>
+    </div>
+</body>
+</html>
