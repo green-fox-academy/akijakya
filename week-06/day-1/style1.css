@@ -1,7 +1,8 @@
 .container {
     display: flex;
-    flex-flow: column;
-    height: 400px;
+    flex-flow: row;
+    width: 400px;
+    margin: 20% auto;
 }
 
 .item {
@@ -19,11 +20,43 @@
 .yellow {
     background-color: #ffd62a;
     flex-grow: 2;
-    order: 3;
+    order: 2;
 }
 
 .purple {
     background-color: #b02aff;
     flex-grow: 0;
-    order: 2;
+    order: 3;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        display: flex;
+        flex-flow: column;
+        height: 400px;
+    }
+    
+    .item {
+        width: 300px;
+        height: 100px;
+        flex-basis: 100px;
+    }
+
+    .green {
+        background-color: #51d400;
+        flex-grow: 0;
+        order: 1;
+    }
+
+    .yellow {
+        background-color: #ffd62a;
+        flex-grow: 0;
+        order: 2;
+    }
+
+    .purple {
+        background-color: #b02aff;
+        flex-grow: 0;
+        order: 3;
+    }
 }
