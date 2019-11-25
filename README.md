@@ -10,3 +10,6 @@
 
 ## reddit project link
 [reddit-clone](https://github.com/akijakya/reddit-clone)
+
+## foxplayer project link
+[foxplayer](https://github.com/akijakya/foxplayer)
