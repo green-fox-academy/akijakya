@@ -45,7 +45,6 @@ app.get('/greetings', function(req, res) {
 });
 
 app.post('/newgreeting', function(req, res) {
-    console.log(req.body);
     connection.query(`INSERT INTO greetings (greeting) VALUES (?);`, [req.body.greeting], function(err, result) {
         if (err) {
             res.status(500).send('Database error');
