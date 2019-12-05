@@ -6,13 +6,14 @@ const path = require('path');
 // requiring express
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = 8080;
 
 // connection with the database
 const mysql = require('mysql');
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
+    host: 'db',
+    port: '3306',
+    user: 'mysql',
     password: 'password', 
     database: 'dockertest',
 });
