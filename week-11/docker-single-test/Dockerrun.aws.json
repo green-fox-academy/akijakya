@@ -1,7 +1,7 @@
 {
     "AWSEBDockerrunVersion": "1",
     "Image": {
-      "Name": "akijakya/docker-single-test",
+      "Name": "akijakya/docker-single-test:v0",
       "Update": "true"
     },
     "Ports": [
