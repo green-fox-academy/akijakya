@@ -3,10 +3,13 @@ version: '3'
 services:
   db:
     build: ./db
+    hostname: mysql
+    ports:
+      - "3306:3306"
   web:
     build: ./web
     ports: 
       - "8080:8080"
-    depends_on: 
-      - db
-    restart: on-failure
+    hostname: nodejs
+    environment:
+      WAIT_HOSTS: mysql:3306
