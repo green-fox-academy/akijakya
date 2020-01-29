@@ -10,10 +10,10 @@
 #                 print(i)
             
 def iq_test(numbers):
-    numArray = map(int, numbers.split(' '))
+    numArray = list(map(int, numbers.split(' ')))
     for i, num in enumerate(numArray, start=1):
         if num % 2 == 1:
-            print(i)
+            return i
             
 def is_even(numArray):
     even = 0
@@ -24,15 +24,12 @@ def is_even(numArray):
         else:
             even += 1
     if even > uneven:
-        print(True)
+        return(True)
     else:
-        print(False)
+        return(False)
 
 arr = "2 2 1 4 6"
 arr2 = "1 3 7 6 5"
 arr3 = arr.split(' ')
 arr4 = list(map(int, arr3))
 arr5 = list(map(int, arr.split(' ')))
-
-iq_test(arr)
-print(arr4)
