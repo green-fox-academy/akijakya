@@ -2,7 +2,7 @@ def countingValleys(n, s):
     arr = list(s)
     level = 0
     valleyCount = 0
-    for i, x in enumerate(arr, start=0):
+    for i, x in enumerate(arr):
         if x == "U":
             level += 1
         else:
