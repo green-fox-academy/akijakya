@@ -17,13 +17,17 @@ def pyramidSort(arr):
         else:
             odds.append(x)
     
-    sorted(odds)
-    sorted(evens)
+    # sorted(odds)
+    # sorted(evens)
 
-    for x in range(len(evens)):
-        odds.append(evens[-x-1])
+    # for x in range(len(evens)):
+    #     odds.append(evens[-x-1])
 
+    odds.sort()
+    evens.sort(reverse=True)
+
+    odds.extend(evens)
     print(odds)
     
 
-pyramidSort([1,2,3,4,5,6,7])
+pyramidSort([1,3,4,5,6,2,7])
