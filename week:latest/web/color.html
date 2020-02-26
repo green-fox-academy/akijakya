@@ -14,16 +14,23 @@
         .square {
             height: 100px;
             width: 100px;
-            background-color: rgb(255, 255, 255);
+            background-color: rgb(255, 0, 255);
+        }
+
+        .square:hover {
+            height: 100px;
+            width: 100px;
+            background-color: rgb(255, 255, 0);
         }
     </style>
 </head>
 <body>
     <div class='square'>
-        <h1></h1>
+        <h1>Hello World</h1>
     </div>
     <script>
-
+        let hello = document.getElementsByClassName("square")[0];
+        hello.addEventListener("click", () => hello.style.color = "green");
     </script>
 </body>
 </html>
